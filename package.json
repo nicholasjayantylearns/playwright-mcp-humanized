@@ -1,0 +1,67 @@
+{
+  "name": "playwright-mcp-humanized",
+  "version": "1.1.0",
+  "description": "Drop-in Playwright Tools for MCP with anti-bot curved mouse movements and log-normal typing delays. Bypasses detection by Cloudflare, DataDome, PerimeterX, etc. Ported to Playwright 1.63 / MCP extension protocol v2.",
+  "keywords": [
+    "mcp",
+    "playwright",
+    "mcp-server",
+    "humanized",
+    "bot-detection",
+    "stealth",
+    "ai-agents",
+    "claude",
+    "opencode",
+    "cursor",
+    "browser-automation"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicholasjayantylearns/playwright-mcp-humanized.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nicholasjayantylearns/playwright-mcp-humanized/issues"
+  },
+  "homepage": "https://github.com/nicholasjayantylearns/playwright-mcp-humanized#readme",
+  "engines": {
+    "node": ">=18"
+  },
+  "author": {
+    "name": "njoppi2"
+  },
+  "license": "Apache-2.0",
+  "scripts": {
+    "lint": "node update-readme.js",
+    "test": "playwright test",
+    "ctest": "playwright test --project=chrome",
+    "ftest": "playwright test --project=firefox",
+    "wtest": "playwright test --project=webkit",
+    "dtest": "MCP_IN_DOCKER=1 playwright test --project=chromium-docker",
+    "build": "echo OK",
+    "npm-publish": "npm run lint && npm run test && npm publish"
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./index.js"
+    },
+    "./patch": "./patch.js",
+    "./humanize": "./humanize.js"
+  },
+  "dependencies": {
+    "ghost-cursor-playwright": "^2.1.0",
+    "playwright": "1.63.0-alpha-2026-08-31",
+    "playwright-core": "1.63.0-alpha-2026-08-31"
+  },
+  "bin": {
+    "playwright-mcp": "cli-humanized.js",
+    "playwright-mcp-humanized": "cli-humanized.js"
+  },
+  "contributors": [
+    {
+      "name": "Nicholas Jayanty",
+      "url": "https://github.com/nicholasjayantylearns"
+    }
+  ]
+}
